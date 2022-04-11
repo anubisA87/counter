@@ -2,7 +2,7 @@ import './App.css';
 import Mensaje from "./Mensaje.js"
 
 const Description = () => {
-  return <p>app components</p>
+  return <p>App components</p>
 }
 
 const App = () => {
