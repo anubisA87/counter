@@ -2,9 +2,14 @@ import './App.css';
 import { useState } from "react";
 //import Mensaje from "./Mensaje.js"
 
+const Counter = ({number}) => {
+  return <h1>{number}</h1>
+}
+/*
 const Counter = (props) => {
   return <h1>{props.number}</h1>
 }
+*/
 
 const App = (props) => {
   const [contador, setContador] = useState(0);
