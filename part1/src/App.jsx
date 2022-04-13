@@ -2,9 +2,10 @@ import './App.css';
 import { useState } from "react";
 //import Mensaje from "./Mensaje.js"
 
-const Counter = ({number}) => {
-  return <h1>{number}</h1>
+const Counter = (props) => {
+  return <h1>{props.number}</h1>
 }
+
 /*
 const Counter = (props) => {
   return <h1>{props.number}</h1>
@@ -22,8 +23,8 @@ const App = (props) => {
     setContador(contador + 1);
   }
     //Decrementar
-    const handleClick2 = () => {
-      setContador(contador - 1)
+  const handleClick2 = () => {
+    setContador(contador - 1)
     }
 
     //Reset
