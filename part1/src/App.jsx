@@ -1,5 +1,6 @@
+import React from 'react';
 import './App.css';
-import { useState } from "react";
+import { useState } from 'react';
 //import Mensaje from "./Mensaje.js"
 
 const Counter = (props) => {
