@@ -1,5 +1,5 @@
 {
-  "name": "part1",
+  "name": "react-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,8 +14,8 @@
   "scripts": {
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [

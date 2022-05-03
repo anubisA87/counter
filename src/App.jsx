@@ -55,6 +55,9 @@ const App = (props) => {
       <button onClick={handleClickReset}>
         Reset
       </button>
+      <footer>
+        by:  pablo
+      </footer>
     </div>
   );
 
