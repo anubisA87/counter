@@ -39,6 +39,7 @@ const App = (props) => {
   const handleChange = event => {
     const target = parseInt(event.target.value)
     setCounter(target)
+    set0()
   }
 
     //Clean button
@@ -51,9 +52,13 @@ const App = (props) => {
   const evenMessage = isEven ? "Even" : "Odd";
 
   //set to 0
-  if (counter === "") {
-    setCounter(0);
+  function set0() {
+    if (isNaN(counter)) {
+      setCounter(0);
+    }
   }
+
+  set0()
 
   //return
   return (
