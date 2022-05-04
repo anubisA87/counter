@@ -14,50 +14,72 @@ const Counter = (props) => {
 */
 
 const App = (props) => {
-  const [contador, setContador] = useState(0);
+  const [counter, setCounter] = useState(0);
+ 
+  function cleanInput() {
+    document.getElementsByTagName("input")[0].value = "";
+  }
   
-
-  //Buttons
-
     //Incrementar
   const handleClick = () => {
-    setContador(contador + 1);
+    setCounter(counter + 1);
   }
     //Decrementar
   const handleClick2 = () => {
-    setContador(contador - 1)
+    setCounter(counter - 1)
     }
 
     //Reset
   const handleClickReset = () => {
-    setContador(0)
+    setCounter(0)
+    cleanInput()
   }
 
+    //Input
+  const handleChange = event => {
+    const target = parseInt(event.target.value)
+    setCounter(target)
+  }
+
+    //Clean button
+  const handleClickCleanInput = () => {
+    cleanInput()
+  }
 
   //is even or odd
-  const isEven = contador % 2 === 0;
-  const mensajePar = isEven ? "Es par" : "Es impar";
+  const isEven = counter % 2 === 0;
+  const evenMessage = isEven ? "Even" : "Odd";
 
+  //set to 0
+  if (counter === "") {
+    setCounter(0);
+  }
 
   //return
   return (
-    <div>
-      <Counter number={contador} />
+    <div class='App'>
+      <header>Counter</header>
+      <Counter number={counter} />
       <p>
-        {mensajePar}
+        {evenMessage}
       </p>
-      <button onClick={handleClick}>
-        Incrementar
+      <button id="increase" onClick={handleClick}>
+        Increase
       </button>
-      <button onClick={handleClick2}>
-        Decrementar
+      <span>a</span>
+      <button id="decrease" onClick={handleClick2}>
+        Decrease
       </button>
-      <button onClick={handleClickReset}>
-        Reset
-      </button>
-      <footer>
-        by:  pablo
-      </footer>
+      <div>
+        <button id="reset" onClick={handleClickReset}>
+          Reset
+        </button>
+      </div>
+      <p></p>
+      <div>
+        <input type="number" placeholder="0" id='number' onChange={handleChange} />
+        <button id="clean" onClick={handleClickCleanInput}>Clean</button>
+      </div>
     </div>
   );
 
