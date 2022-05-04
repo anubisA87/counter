@@ -22,11 +22,15 @@ const App = (props) => {
   
     //Incrementar
   const handleClick = () => {
-    setCounter(counter + 1);
+    setCounter(counter + 1)
+    set0()
+    isLength()
   }
     //Decrementar
   const handleClick2 = () => {
     setCounter(counter - 1)
+    set0()
+    isLength()
     }
 
     //Reset
@@ -40,6 +44,7 @@ const App = (props) => {
     const target = parseInt(event.target.value)
     setCounter(target)
     set0()
+    isLength()
   }
 
     //Clean button
@@ -55,6 +60,14 @@ const App = (props) => {
   function set0() {
     if (isNaN(counter)) {
       setCounter(0);
+    }
+  }
+
+  function isLength() {
+    if (Math.ceil(Math.log(counter + 1) / Math.LN10) === 8) {
+      setCounter(0)
+      alert("No more numbers can be displayed")
+      cleanInput()
     }
   }
 
@@ -91,27 +104,5 @@ const App = (props) => {
 };
 
 
-
-
-
-
-
-
-/*
-const Description = () => {
-  return <p>App components</p>
-}
-
-const App = () => {
-  return (
-    <div className="App">
-      <Mensaje color="red" message="We are working"/>
-      <Mensaje color="blue" message="On a new"/>
-      <Mensaje color="green" message="React project"/>
-      <Description />
-    </div>
-  )
-}
-*/
 
 export default App;
