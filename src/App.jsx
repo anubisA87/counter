@@ -16,10 +16,32 @@ const Counter = (props) => {
 const App = (props) => {
   const [counter, setCounter] = useState(0);
  
+
+  //set to 0
+  function set0() {
+    if (isNaN(counter)) {
+      setCounter(0);
+    }
+  }
+
   function cleanInput() {
     document.getElementsByTagName("input")[0].value = "";
   }
   
+  function isLength() {
+    if (counter.toString().length === 8) {
+      setCounter(0)
+      alert("No more numbers can be displayed")
+      cleanInput()
+    }
+  }
+
+  // num.toString().length
+  // (Math.ceil(Math.log(counter + 1) / Math.LN10)
+
+
+
+
     //Incrementar
   const handleClick = () => {
     setCounter(counter + 1)
@@ -56,20 +78,10 @@ const App = (props) => {
   const isEven = counter % 2 === 0;
   const evenMessage = isEven ? "Even" : "Odd";
 
-  //set to 0
-  function set0() {
-    if (isNaN(counter)) {
-      setCounter(0);
-    }
-  }
 
-  function isLength() {
-    if (Math.ceil(Math.log(counter + 1) / Math.LN10) === 8) {
-      setCounter(0)
-      alert("No more numbers can be displayed")
-      cleanInput()
-    }
-  }
+
+
+
 
   set0()
 
